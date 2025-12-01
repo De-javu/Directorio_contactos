@@ -1,0 +1,46 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# Entorno virtual
+venv/
+# Archivos de datos
+contactos.json
+contactos.csv
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+# Archivos de configuración de tu editor
+.vscode/
+.idea/
+.contactos.csv
+.contactos.json
+.proyecto_gestor_contactos/
+# Archivos de entorno de desarrollo
+.env
+.env.local
+.env.*.local
+# Archivos de logs
+*.log
+logs/
+# Archivos de base de datos
+*.sqlite3
+db.sqlite3
+# Archivos de caché
+.cache/
+.pytest_cache/
+.mypy_cache/
+# Archivos de distribución
+dist/
+build/
+*.egg-info/
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+# Archivos de pruebas
+tests/__pycache__/
+tests/*.pyc
+tests/data/
+tests/temp/
+# Archivos de documentación
+docs/_build/
+docs/*.log
+docs/*.aux
+docs/*.toc
