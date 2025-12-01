@@ -13,10 +13,19 @@ def agregar_contacto(lista):
         lista.append({'nombre': nombre, 'telefono': telefono, 'email': email}) # Agrega un nuevo contacto a la lista
     guardar_contactos(lista)
 
+def cargar_contactos():
+    try:
+       with open('contactos.json') as archivo:
+         return json.load(archivo)
+   
+    except FileNotFoundError:
+        return[  ]
+
 
 def guardar_contactos_json(lista):
     while True:
         nombre = input("Digta el Nombre: ")
+
         if nombre  == "":
             print("///////////////////////////////////////")
             break
@@ -35,6 +44,7 @@ def guardar_contactos_csv(lista):
         nombre = input("Digta el Nombre: ")
         if nombre  == "":
             print("///////////////////////////////////////")
+            print("")
             break
         telefono = input("Digita el numero telefonico: ")
         email = input("Digita el correo electronico ") 
