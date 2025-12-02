@@ -3,7 +3,7 @@
 from contactos import agregar_contacto, buscar_contacto, listar_contactos, salir, guardar_contactos_json, guardar_contactos_csv, cargar_contactos
 # Se crea la funcion de menu de opciones
 def mostrar_menu():
-    print("1. ************Menu de Opciones************")
+    print(" ************Menu de Opciones************")
     print(" ")
     print("1. Agregar contacto")
     print("2. Buscar contacto por nombre")
@@ -13,7 +13,7 @@ def mostrar_menu():
     print("6. Cargar contactos desde archivo CSV")
     print("7. Cargar contactos desde archivo JSON")
     print("8. Salir")
-    print("1. ****************************************")
+    print(" ****************************************")
 
 
 # Se crea la funcion programa , que la que da la entrada para interactuar con las funciones del menu
