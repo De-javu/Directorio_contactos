@@ -1,6 +1,7 @@
 # Pagina principla para ejecucion  del programa:
 
-from contactos import agregar_contacto, buscar_contacto, listar_contactos, salir, guardar_contactos_json, guardar_contactos_csv, cargar_contactos
+import contactos
+
 # Se crea la funcion de menu de opciones
 def mostrar_menu():
     print(" ************Menu de Opciones************")
@@ -18,19 +19,26 @@ def mostrar_menu():
 
 # Se crea la funcion programa , que la que da la entrada para interactuar con las funciones del menu
 def programa():
-    contactos = cargar_contactos()
+    lista = contactos.cargar_contactos()
     while True:
         mostrar_menu()
         opcion = int(input("Elige una opcion  "))
         if opcion == 1:
-            agregar_contacto(contactos)
+            contactos.agregar_contacto(lista)
+        elif opcion == 2:
+            contactos.buscar_contacto(lista)
+        elif opcion == 3: 
+            contactos.listar_contactos(lista)
         elif opcion == 4:
-             guardar_contactos_csv(contactos)
+             contactos.guardar_contactos_csv(lista)
         elif opcion == 5:
-            guardar_contactos_json(contactos) 
-        
+            contactos.guardar_contactos_json(lista) 
+        elif opcion == 6:
+            contactos.cargar_csv(lista)
+        elif opcion ==7:
+            contactos.cargar_json(lista)    
         elif opcion == 8:
-            salir()     
+            contactos.salir()     
 
            
 

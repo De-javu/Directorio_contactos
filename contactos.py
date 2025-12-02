@@ -65,13 +65,56 @@ def guardar_contactos_csv(lista):
 
     
 
-def buscar_contacto(lista, nombre):
-    #logica para buscar nombre
-    pass
+def buscar_contacto(lista, nombre=None):
+    if not nombre:
+        nombre = input("Escribe el nombre de la persona que buscas: ")
+    with open('contactos.json', 'r') as archivo:
+        data = json.load(archivo)
+        for contacto in data:
+            if contacto['nombre'].lower() == nombre.lower():
+                print(f"Nombre: {contacto['nombre']}")
+                print(f"Teléfono: {contacto['telefono']}")
+                print(f"Email: {contacto['email']}")
+                print("Contacto enconytrado en el archivo json")
+                break
+        else:
+            print("Contacto no encontrado.")
+
+    with open('contactos.csv', mode='r', newline='') as archivo_csv:
+        lector =csv.DictReader(archivo_csv)
+        for contacto in lector:
+            if contacto['nombre'].lower() == nombre.lower():
+                print(f"Nombre: {contacto['nombre']}")
+                print(f"Teléfono: {contacto['telefono']}")
+                print(f"Email: {contacto['email']}")
+                print("contacto encontrado en el archiov csv")
+                break
+        else:
+            print("Contacto no encontrado.")
+
+
+
+
+
 
 def listar_contactos(lista):
-    # logica para listar contactos
-    pass
+    with open('contactos.json', 'r') as archivo:
+        lista =json.load(archivo)
+        print("\n======= LISTA DE CONTACTOS          JSON       =======")
+    for contactos in lista:
+        print(f'NOMBRE: {contactos['nombre']},TELEFONO: {contactos['telefono']}, CORREO: {contactos['email']},')
+        print('***********************Listado de tu archivo json ********************************')
+
+    with open('contactos.csv', mode='r', newline='') as archivo_csv:
+        lista = csv.DictReader(archivo_csv)
+        print("\n======= LISTA DE CONTACTOS          CSV       =======")
+        for contacto in lista:
+            print(f"NOMBRE: {contacto['nombre']}, TELEFONO: {contacto['telefono']}, CORREO: {contacto['email']}")
+    print('***********************Listado de tu archivo csv ********************************')
+    
+
+
+
 
 
 # sta funcion se encarga de almacenar los datos ingresados en json y csv en un solo paso 
@@ -92,13 +135,19 @@ def guardar_contactos(lista):
     
  
 
-def cargar_csv(listas):
-    # losgica para cargar csv
-    pass
+def cargar_csv(lista):
+    with open('contactos.csv', mode='r', newline='') as archivo_csv:
+        lista = csv.DictReader(archivo_csv)
+        print("\n======= LISTA DE CONTACTOS =======")
+        for contacto in lista:
+            print(f"NOMBRE: {contacto['nombre']}, TELEFONO: {contacto['telefono']}, CORREO: {contacto['email']}")
+    print('Listado de tu archivo csv')
 
 def cargar_json(lista):
-    # logica para cargar json
-    pass
+    with open('contactos.json', 'r') as archivo:
+        lista =json.load(archivo)
+    for contactos in lista:
+        print(f'NOMBRE: {contactos['nombre']},TELEFONO: {contactos['telefono']}, CORREO: {contactos['email']},')
 
 
 def salir():
