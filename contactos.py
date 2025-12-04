@@ -21,7 +21,7 @@ def cargar_contactos():
          contenido =archivo.read()
          if not contenido.strip():
              return []
-         return json.load(archivo)
+         return json.loads(contenido)
    
     except FileNotFoundError:
         print("El archivo no existe")
