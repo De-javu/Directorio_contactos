@@ -17,7 +17,7 @@ def mostrar_menu():
     print(" ****************************************")
 
 
-# Se crea la funcion programa , que la que da la entrada para interactuar con las funciones del menu
+# Se crea la funcion programa, que es la que da la entrada para interactuar con las funciones del menu.
 def programa():
     lista = contactos.cargar_contactos()
     while True:
@@ -42,7 +42,7 @@ def programa():
 
            
 
-# permite definir cuando se corra el programa en que funciondebe iniciar para que se ejecute de forma ordenada
+# permite definir cuando se corra el programa en que funcion debe iniciar para que se ejecute de forma ordenada.
 if __name__ == "__main__":
     programa()
 
